@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
   
   async function handleRequest(request) {
 	const country = request.cf.country;
-	const notsg = 'https://1.1.1.1/';
+	const notsg = 'https://1.1.1.1';
 	const ipaddress = request.header.get('CF-Connecting-IP');
 	
 	let html_content = '';
