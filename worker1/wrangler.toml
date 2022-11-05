@@ -1,0 +1,6 @@
+name = "worker1"
+main = "src/index.js"
+compatibility_date = "2022-11-04"
+routes = [
+    { pattern = "lewisang.xyz/geo", zone_id = "6539288bd181eeb9da8aad796b99d89c" }
+]
