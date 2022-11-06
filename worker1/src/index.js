@@ -5,7 +5,7 @@ addEventListener('fetch', event => {
   async function handleRequest(request) {
 	const country = request.cf.country;
 	const notsg = 'https://1.1.1.1/';
-	const ipaddress = request.header.get('CF-Connecting-IP');
+	const ipaddress = request.headers.get('CF-Connecting-IP');
 	
 	let html_content = '';
 	let html_style = 'body{padding:6em; font-family: sans-serif;} h1{color:#f6821f;}';
@@ -25,37 +25,17 @@ addEventListener('fetch', event => {
   ${html_content}
 </body>`;
 
-	
-  
-	
-  
-	
- 
-	if (country != null && country == "SG"){
-		return new Response(html, {
-			headers: {
-			  'content-type': 'text/html;charset=UTF-8',
-			},
-		  });
+if (country != null && country == "SG"){
+	return new Response(html, {
+		headers: {
+		  'content-type': 'text/html;charset=UTF-8',
+		},
+	  });
 		  
  
 	}
   else {
-	return Response.redirect(notsg)
+	return Response.redirect(notsg);
   }
 
-
-addEventListener('fetch', async event => {
-  event.respondWith(handleRequest(event.request));
-});
-
-
-
-	
-  
-	return new Response(html, {
-	  headers: {
-		'content-type': 'text/html;charset=UTF-8',
-	  },
-	});
   }
